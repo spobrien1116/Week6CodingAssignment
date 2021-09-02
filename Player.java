@@ -5,50 +5,54 @@ import java.util.List;
 
 public class Player {
     
-    //hand (List of Card)
+    //Fields listed below.
+    //hand (List of Card).
     private List<Card> hand = new ArrayList<Card>();
-    //score (set to 0 in the constructor)
+    //score (set to 0 in the constructor).
     private int score;
-    //name
+    //name (Player name).
     private String name;
 
-
+    //Constructor for Player.
     public Player(String string) {
         this.name = string;
         this.score = 0;
     }
-    //Methods
-    //describe
+    //Methods listed below.
+    //Method that prints out information about the player and calls the describe method for each
+    //card in the Hand List.
     public void describePlayer() {
-        System.out.println("Player " + name + " currently has a score of: " + score + ".");
-        for (Card card : hand) {
-            card.describeCard();
-        }
+        System.out.println("Player " + name + " flips a card.");
+        // for (Card card : hand) {
+        //     card.describeCard();
+        // }                Old way, changed to just describing the current card being flipped.
+        hand.get(0).describeCard();
     }
-    //flip
+    //Method that removes and returns the top card of the Hand.
     public Card flip() {
         return hand.remove(0);
     }
-    //draw
+    //Method that takes Deck as an argument and calls the draw method on the deck, adding the
+    //returned Card to the hand field.
     public void draw(Deck deck) {
         hand.add(deck.draw());
     }
-    //incrementScore
-    public void addToScore() {
+    //Method to add 1 point to the player's score.
+    public void incrementScore() {
         this.score++;
     }
-
-    //Setter method for Player One Score and Player Two Score
+    //Getters and setters listed below.
+    //Setter method for Player One Score and Player Two Score.
     public void setScores(int score) {
         this.score = score;
     }
 
-    //Getter method for Player One Score and Player Two Score
+    //Getter method for Player One Score and Player Two Score.
     public int getScores() {
         return this.score;
     }
 
-    //Getter method for Player Name
+    //Getter method for Player Name.
     public String getName() {
         return name;
     }

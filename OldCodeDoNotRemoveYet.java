@@ -30,3 +30,8 @@
 //         return deckOf52;
 //     }
 // }
+
+//I wanted to keep this here as a reminder of my initial attempt. I think in the future, I would like
+//to revisit this program and view it on my own terms. I would like to approach it differently, and see
+//if I can get the same functionality by creating the deck as a Map. I like the idea of each card being
+//a key (hence each one is still unique) with the value being the value.

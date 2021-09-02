@@ -6,12 +6,17 @@ import java.util.Collections;
 
 public class Deck {
     
-    //Fields
+    //Fields listed below.
+    //cards (List of Card).
     private List<Card> cards = new ArrayList<Card>();
+    //cardNames (Base card names that will be added suits later in the constructor for Deck).
     private String[] cardNames = {"Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace"};
+    //cardValues (Card values assigned, range from 2 to 14).
     private int[] cardValues = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
 
-    // Constructor for Deck
+    //Constructor for Deck.
+    //In the constructor, when a new Deck is instantiated, the Cards field should be
+    //populated with the standard 52 cards.
     public Deck () {
         for (int i = 0; i < cardNames.length; i++) {
             Card newCard = new Card();
@@ -38,29 +43,26 @@ public class Deck {
             cards.add(newCard);
         }
     }
-
+    //Getters and setters listed below.
+    //Getter method for card names.
     public String[] getCardNames() {
         return cardNames;
     }
+    //Getter method for card values.
     public int[] getCardValues() {
         return cardValues;
     }
+    //Getter method for List of cards that will make up the deck.
     public List<Card> getCards() {
         return cards;
     }
-
-    //Methods
-
-    //Shuffle (randomizes the order of the cards)
+    //Methods listed below.
+    //Method that randomizes the order of the cards.
     public void shuffle() {
         Collections.shuffle(cards);
     }
-
-    //Draw (removes and returns the top card of the Cards field)
+    //Method that removes and returns the top card of the Cards field.
     public Card draw() {
         return cards.remove(0);
     }
-
-    //      --In the constructor, when a new Deck is instantiated, the Cards field should
-    //      be populated with the standard 52 cards--
 }
